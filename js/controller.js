@@ -150,7 +150,8 @@ controller.addToCart = (idBtn,idImg,drink,bean)=>{
           obj = item
         }
       });
-       model.addToCart(obj)// nem qua model xu li
+      console.log("1");
+       model.addToCart(obj)// nem qua model xu licfgc
     })
   }
 }
