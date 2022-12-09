@@ -158,25 +158,22 @@ controller.addToCart = (idBtn,idImg,drink,bean)=>{
 controller.search = (inputValue) => {
   let ren = "";
   let newArr = [];
-  for( let i= 0; i<items.length ; i++){
-    if (inputValue.toUpperCase() == items[i].name){
-      console.log(items[i].name);
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].name.includes(inputValue.toUpperCase())) {
+      newArr.push(items[i])
     }
-
-    // return newArr
   }
+  for (let i = 0; i < newArr.length; i++) {
+    ren += `<div class="box">
+      <img src="${newArr[i].img}" class="img-drink-bean" alt="${newArr[i].id}">
+          <h2>${newArr[i].name}</h2>
+          <div class="price">${newArr[i].price}</div>
+          <a  id="convert" class="convert-btn">add to cart</a>
+      </div>`
+  }
+  document.getElementById("displaySearch").innerHTML = ren
 
-  // for (let i = 0; i < items.length; i++) {
-  //   if (inputValue.toUpperCase() == items[i].name) {
-  //     ren += `<div class="box">
-  //     <img src="${items[i].img}" class="img-drink-bean" alt="${items[i].id}">
-  //         <h2>${items[i].name}</h2>
-  //         <div class="price">${items[i].price}</div>
-  //         <a  id="convert" class="convert-btn">add to cart</a>
-  //     </div>`
-  //   }
-  //   document.getElementById("displaySearch").innerHTML = ren
-  // }
+
 }
 
 

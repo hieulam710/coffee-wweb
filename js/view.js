@@ -234,6 +234,7 @@ view.setActiveScreen = (screenName) => {
             controller.searchBtnn()
             controller.cartItem()
             controller.profile()
+            
             controller.logout('logout')
             controller.addToCart("convert-btn","img-drink-bean",items,products)
             break;
